@@ -5,3 +5,7 @@ To start:
 
 npm i =>
 npm start
+
+or right here:
+
+https://lukhanina.github.io/pokemon-react-redux-API/
