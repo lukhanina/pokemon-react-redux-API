@@ -1,0 +1,48 @@
+.header {
+    padding: 30px;
+    justify-content: center;
+}
+
+.logo {
+    max-height: 200px;
+    width: 100%;
+}
+
+.header__h1 {
+    padding: 50px;
+    color: #2E62C1;
+	-webkit-animation: text-shadow-drop-tr 0.6s infinite both;
+	        animation: text-shadow-drop-tr 0.6s infinite both;
+}
+
+ @-webkit-keyframes text-shadow-drop-tr {
+    0% {
+      text-shadow: 0 0 0 #ebe281;
+    }
+    100% {
+      text-shadow: 0 0 18px #ffea07c5;
+    }
+  }
+  @keyframes text-shadow-drop-tr {
+    0% {
+      text-shadow: 0 0 0 #ebe281;
+    }
+    100% {
+      text-shadow: 0 0 18px #ffea07c5;
+    }
+  }
+
+@media (max-width: 500px) {
+  .header {
+    padding: 15px;
+}
+
+.logo {
+}
+
+.header__h1 {
+    padding: 25px;
+    font-size: 25px;
+}
+}
+  

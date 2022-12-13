@@ -1,0 +1,14 @@
+.back__button {
+    width: 220px;
+    font-size: 14px;
+    border-radius: 7px;
+    padding: 10px;
+    border: 1px solid white;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+.back__button:hover {
+    cursor: pointer;
+    border: 1px solid black;
+    box-shadow: 0 0 10px #fff;
+}

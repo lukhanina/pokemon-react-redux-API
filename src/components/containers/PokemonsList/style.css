@@ -1,0 +1,22 @@
+.pokemons-list {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap:20px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.pokemons-list__button {
+    font-size: 16px;
+    border-radius: 7px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+.pokemons-list__button:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px #fff;
+}

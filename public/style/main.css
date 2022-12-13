@@ -1,0 +1,308 @@
+/*!**************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/Main/css/style.css ***!
+  \**************************************************************************/
+* {
+    margin: 0 auto;
+    box-sizing: border-box;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.body_background {
+    background-color: #282c34;
+}
+
+.root {
+    max-width: 1140px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    width: 100%;
+}
+
+/*!****************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/containers/PokemonsList/style.css ***!
+  \****************************************************************************************************/
+.pokemons-list {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap:20px;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.pokemons-list__button {
+    font-size: 16px;
+    border-radius: 7px;
+    padding: 10px;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+.pokemons-list__button:hover {
+    cursor: pointer;
+    box-shadow: 0 0 10px #fff;
+}
+
+/*!***********************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/Header/style.css ***!
+  \***********************************************************************************/
+.header {
+    padding: 30px;
+    justify-content: center;
+}
+
+.logo {
+    max-height: 200px;
+    width: 100%;
+}
+
+.header__h1 {
+    padding: 50px;
+    color: #2E62C1;
+	-webkit-animation: text-shadow-drop-tr 0.6s infinite both;
+	        animation: text-shadow-drop-tr 0.6s infinite both;
+}
+
+ @-webkit-keyframes text-shadow-drop-tr {
+    0% {
+      text-shadow: 0 0 0 #ebe281;
+    }
+    100% {
+      text-shadow: 0 0 18px #ffea07c5;
+    }
+  }
+  @keyframes text-shadow-drop-tr {
+    0% {
+      text-shadow: 0 0 0 #ebe281;
+    }
+    100% {
+      text-shadow: 0 0 18px #ffea07c5;
+    }
+  }
+
+@media (max-width: 500px) {
+  .header {
+    padding: 15px;
+}
+
+.logo {
+}
+
+.header__h1 {
+    padding: 25px;
+    font-size: 25px;
+}
+}
+  
+
+/*!**********************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/containers/Search/style.css ***!
+  \**********************************************************************************************/
+.d-flex {
+    padding-bottom: 70px;
+    padding-top: 30px;
+    max-width: 400px;
+    width: 100%;
+    min-width: 200px;
+}
+.search__input {
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    border: none;
+    padding: 10px;
+    width: 70%;
+}
+
+.search__button {
+    border: none;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    border-top: none;
+    padding: 10px;
+    width: 30%;
+}
+
+.search__button:disabled {
+    color: #fff;
+}
+
+.search__button:hover {
+    cursor: pointer;
+    background-color: #282c34;
+    color: #fff;
+    box-shadow: 0 0 10px #fff;
+}
+
+.search__input:focus-visible {
+    box-shadow: 0 0 10px #fff;
+}
+
+
+/*!***********************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/Footer/style.css ***!
+  \***********************************************************************************/
+.footer {
+    width: 100%;
+    display: flex;
+    padding: 30px;
+}
+
+.all-rights {
+    display: block;
+    padding-top: 32px;
+    color: #7a7a7a;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 14px;
+    letter-spacing: 0.4px;
+    margin-right: auto;
+  }
+  
+  .social {
+    display: flex;
+    padding-top: 24px;
+    padding-bottom: 24px;
+  }
+  
+  .social-links {
+    text-decoration: none;
+    display: block;
+  }
+  
+  .fa-brands {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.4px;
+    height: 32px;
+    width: 32px;
+    margin-right: 8px;
+    border-radius: 7px;
+    border: 1px solid white;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+  }
+  
+  .fa-brands:hover {
+    cursor: pointer;
+    border: 1px solid black;
+    box-shadow: 0 0 10px #fff;
+  }
+.footer-mrg-l {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+.footer-mrg-r {
+  margin-left: auto;
+  margin-right: 0;
+}
+
+/*!**********************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/SearchResult/css/style.css ***!
+  \**********************************************************************************/
+
+/*!***************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/BackButton/style.css ***!
+  \***************************************************************************************/
+.back__button {
+    width: 220px;
+    font-size: 14px;
+    border-radius: 7px;
+    padding: 10px;
+    border: 1px solid white;
+    box-shadow: 0 0 10px rgb(0, 0, 0);
+}
+
+.back__button:hover {
+    cursor: pointer;
+    border: 1px solid black;
+    box-shadow: 0 0 10px #fff;
+}
+
+/*!***************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/containers/PokemonInfo/style.css ***!
+  \***************************************************************************************************/
+.pkm-pks-flex {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.left-part {
+    display: flex;
+    width: 50%;
+    padding: 30px;
+}
+
+.right-part {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 30px;
+    font-size: 14px;
+    justify-content: center;
+}
+
+.pkm-pks__img {
+    min-width: 100px;
+    max-width: 100%;
+    max-height: 300px;
+}
+
+.pad-t-15 {
+    padding-top: 15px;
+    margin-left: 0;
+    margin-right: auto;
+}
+
+.pkm-pks-block {
+    width: 100%;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.pkm-pks__list {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;    
+    justify-content: space-around;
+    grid-gap: 20px;
+    padding: 0;
+}
+
+.pkm-pks__li:hover {
+    box-shadow: 0 0 10px #fff;
+}
+
+.pkm-pks__li {
+    display: block;
+    list-style-type: none;
+    padding: 10px;
+    border: 1px solid #fff;
+    border-radius: 10px;
+}
+
+.pkm-pks__h3 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    text-align: center;
+}
+
+.pkm-pks__abilities {
+    border-right: 1px solid #fff;
+    width: 50%;
+}
+
+.upcs {
+    text-transform: uppercase;
+}
+

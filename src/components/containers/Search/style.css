@@ -1,0 +1,39 @@
+.d-flex {
+    padding-bottom: 70px;
+    padding-top: 30px;
+    max-width: 400px;
+    width: 100%;
+    min-width: 200px;
+}
+.search__input {
+    border-bottom-left-radius: 10px;
+    border-top-left-radius: 10px;
+    border: none;
+    padding: 10px;
+    width: 70%;
+}
+
+.search__button {
+    border: none;
+    border-bottom-right-radius: 10px;
+    border-top-right-radius: 10px;
+    border-top: none;
+    padding: 10px;
+    width: 30%;
+}
+
+.search__button:disabled {
+    color: #fff;
+}
+
+.search__button:hover {
+    cursor: pointer;
+    background-color: #282c34;
+    color: #fff;
+    box-shadow: 0 0 10px #fff;
+}
+
+.search__input:focus-visible {
+    box-shadow: 0 0 10px #fff;
+}
+
