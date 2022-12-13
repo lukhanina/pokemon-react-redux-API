@@ -1,5 +1,3 @@
-//import { getJSON, RSAA } from 'redux-api-middleware';
-
 export const START_LOAD_POKEMONS_LIST = '@@message/START_LOAD_POKEMONS_LIST';
 export const SUCCESS_LOAD_POKEMONS_LIST = '@@message/SUCCESS_LOAD_POKEMONS_LIST';
 export const ERR_LOAD_POKEMONS_LIST = '@@message/ERR_LOAD_POKEMONS_LIST';
