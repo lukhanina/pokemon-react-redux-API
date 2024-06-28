@@ -2,15 +2,15 @@ import React, { useEffect, useState } from 'react';
 import './style.css';
 import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
-import { connect } from 'react-redux/es/exports';
+import { connect } from 'react-redux';
 import { loadPokemons } from '../../../store/actions/msg_action';
 import { bindActionCreators } from 'redux';
-    
+
 function PokemonsList(props) {
   const pokemons = props.pokemons.results;
   const currectPage = props.pokemons.next ? props.pokemons.next : 0;
 
-  const [ fetching, setFetching ] = useState(true);
+  const [fetching, setFetching] = useState(true);
 
   useEffect(() => {
     if (fetching && props.pokemons.next !== null) {
@@ -23,8 +23,8 @@ function PokemonsList(props) {
     if (((e.target.documentElement.scrollHeight - (e.target.documentElement.scrollTop +
       window.innerHeight)) < 100)) {
       setFetching(true)
-    } 
-  } 
+    }
+  }
 
   useEffect(() => {
     document.addEventListener('scroll', scrollHandler)
@@ -32,7 +32,7 @@ function PokemonsList(props) {
       document.removeEventListener('scroll', scrollHandler)
     }
   }, [])
-  
+
   const pokemonsList = pokemons?.map((el, idx) => {
     const name = el.name;
     return (
@@ -56,9 +56,9 @@ function PokemonsList(props) {
 }
 
 const mapStateToProps = ({ pkmReducer }) =>
-  ({
-    pokemons: pkmReducer
-  })
+({
+  pokemons: pkmReducer
+})
 
 const mapDispatchToProps = dispatch => bindActionCreators({ loadPokemons }, dispatch);
 export default connect(mapStateToProps, mapDispatchToProps)(PokemonsList);

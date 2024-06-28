@@ -3,7 +3,7 @@ const MiniCss = require('mini-css-extract-plugin');
 const HtmlWebpackPlagin = require('html-webpack-plugin');
 module.exports = {
   entry: './src/index.jsx',
-  output: {  
+  output: {
     filename: 'bundle.js',
     path: path.join(__dirname, 'public'),
     assetModuleFilename: 'img/[name][ext]'
@@ -24,10 +24,14 @@ module.exports = {
         test: /\.(js|jsx)$/,
         loader: 'babel-loader',
         options: {
+          presets: [
+            ['@babel/preset-env', { targets: "defaults" }],
+            ['@babel/preset-react']
+          ],
           plugins: [
-            ["@babel/plugin-proposal-class-properties", { "loose": true }],
-            ["@babel/plugin-proposal-private-methods", { "loose": true }],
-            ["@babel/plugin-proposal-private-property-in-object", { "loose": true }]
+            ["@babel/plugin-transform-class-properties", { "loose": true }],
+            ["@babel/plugin-transform-private-methods", { "loose": true }],
+            ["@babel/plugin-transform-private-property-in-object", { "loose": true }]
           ]
         }
       },
