@@ -1,0 +1,117 @@
+* {
+    box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex: 1 1 auto;
+}
+
+.body_background {
+    background-color: #282c34;
+}
+
+.root {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: white;
+    width: 100%;
+    max-width: 1440px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0px 16px;
+
+    @media (min-width: 720px) {
+        padding: 0px 48px;
+    }
+
+    @media (min-width: 1080px) {
+        padding: 0px 96px;
+    }
+}
+
+.logo-container {
+    padding: 50px 30px;
+    display: flex;
+    align-items: center;
+    margin: 0px auto;
+    user-select: none;
+
+    @media (min-width: 1080px) {
+        padding: 100px 30px;
+    }
+}
+
+.logo {
+    width: 300px;
+    margin: 0px auto;
+    display: flex;
+
+    @media (min-width: 1080px) {
+        width: 400px;
+    }
+}
+
+.logo__h1 {
+    color: #2E62C1;
+    -webkit-animation: text-shadow-drop-tr 600ms 300ms cubic-bezier(0, 0, .58, 1) forwards;
+    animation: text-shadow-drop-tr 600ms 300ms cubic-bezier(0, 0, .58, 1) forwards;
+    text-align: center;
+}
+
+@-webkit-keyframes text-shadow-drop-tr {
+    0% {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+        text-shadow: 0 0 5px #ffea07c5;
+    }
+}
+
+@keyframes text-shadow-drop-tr {
+    0% {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+        text-shadow: 0 0 5px #ffea07c5;
+    }
+}
+
+@media (max-width: 500px) {
+    .logo-container {
+        padding: 15px;
+    }
+
+    .logo {
+        width: 270px;
+    }
+
+    .logo__h1 {
+        padding: 25px;
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 900px) {
+
+    .logo-container {
+        flex-direction: column;
+    }
+}

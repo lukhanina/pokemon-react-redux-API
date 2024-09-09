@@ -1,12 +1,15 @@
 .pokemons-list {
     display: flex;
     flex-wrap: wrap;
-    grid-gap:20px;
+    grid-gap: 20px;
+    justify-content: space-between;
 }
 
 a {
     color: inherit;
     text-decoration: none;
+    align-items: center;
+    display: flex;
 }
 
 .pokemons-list__button {

@@ -5,13 +5,14 @@ import MyRouter from './router';
 import { store, history } from './store/store';
 import { Provider } from 'react-redux';
 import ScrollToTop from './components/containers/ScrollToTop/ScrollToTop';
+import { HashRouter } from 'react-router-dom';
 
 const root = ReactDOM.createRoot(document.getElementById('app'));
 root.render(
   <Provider store={store}>
-    <Router history={history}>
+    <HashRouter basename="/">
       <ScrollToTop />
       <MyRouter />
-    </Router>
+    </HashRouter>
   </Provider>
 )

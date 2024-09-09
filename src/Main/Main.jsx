@@ -1,18 +1,23 @@
 import React from 'react';
-import './css/style.css'
+import './style.css'
 import PokemonsList from '../components/containers/PokemonsList/PokemonsList';
-import { Header } from '../components/Header/Header';
-import { Search } from '../components/containers/Search/Search'
 import { Footer } from '../components/Footer/Footer';
+import logo from './img/logo.png'
+import { Header } from '../components/Header/Header';
 
-export function Main (){
-  
+export function Main() {
+
   return (
-    <>
-      <Header />
-      <Search />
-      <PokemonsList />
+    <div className='wrapper'>
+      <div className='main'>
+        <Header />
+        <div className='logo-container'>
+          <img src={logo} alt="logo" className='logo' />
+          <h1 className='logo__h1'>Choose your pokemon!</h1>
+        </div>
+        <PokemonsList />
+      </div>
       <Footer />
-    </>
+    </div>
   )
 }

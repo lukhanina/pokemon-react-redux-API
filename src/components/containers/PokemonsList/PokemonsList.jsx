@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import './style.css';
 import { Link } from 'react-router-dom';
-import { Button } from 'react-bootstrap';
+import { Button } from '@mui/material';
 import { connect } from 'react-redux';
 import { loadPokemons } from '../../../store/actions/msg_action';
 import { bindActionCreators } from 'redux';
@@ -36,7 +36,7 @@ function PokemonsList(props) {
   const pokemonsList = pokemons?.map((el, idx) => {
     const name = el.name;
     return (
-      <Link to={`/pokemon/${name}`} key={idx}>
+      <Link to={`pokemon/${name}`} key={idx}>
         <Button
           variant="primary"
           className="pokemons-list__button"
