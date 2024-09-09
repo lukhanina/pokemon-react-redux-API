@@ -31,7 +31,7 @@ export function Header() {
           display: 'flex',
           alignItems: 'center'
         }}>
-          <Link href={isAboutUs ? '/' : '#about-us'} sx={{ color: 'white', textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}>{isAboutUs ? 'Pokemon list' : 'More about us'}</Link>
+          <Link href={isAboutUs ? '#/' : '#about-us'} sx={{ color: 'white', textDecoration: 'none', '&:hover': { textDecoration: 'underline' } }}>{isAboutUs ? 'Pokemon list' : 'More about us'}</Link>
         </Typography>
       </div>
       <Search />

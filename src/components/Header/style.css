@@ -5,6 +5,7 @@
     width: 100%;
     margin: 20px 0px;
     gap: 10%;
+    user-select: none;
 
     @media (max-width: 719px) {
         height: auto;
