@@ -1,11 +1,32 @@
 import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './style.css';
+import { Typography, Box, Link } from '@mui/material';
+import { Search } from '../containers/Search/Search'
+import logo from './img/pokemon-logo.png'
+import title from './img/pokemon-title.png'
 import { Typography, Box, Link } from '@mui/material';
 import { Search } from '../containers/Search/Search'
 import logo from './img/pokemon-logo.png'
 import title from './img/pokemon-title.png'
 
 export function Header() {
+  const [isAboutUs, setIsAboutUs] = useState(false);
+  useEffect(() => {
+    const checkHash = () => {
+      if (window.location.hash === '#about-us') {
+        setIsAboutUs(true);
+      } else {
+        setIsAboutUs(false);
+      }
+    };
+    checkHash();
+    window.addEventListener('hashchange', checkHash);
+    return () => {
+      window.removeEventListener('hashchange', checkHash);
+    };
+  }, []);
+
   const [isAboutUs, setIsAboutUs] = useState(false);
   useEffect(() => {
     const checkHash = () => {
