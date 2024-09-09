@@ -1,10 +1,19 @@
-/*!**************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/Main/css/style.css ***!
-  \**************************************************************************/
+/*!**********************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/Main/style.css ***!
+  \**********************************************************************/
 * {
-    margin: 0 auto;
     box-sizing: border-box;
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.main {
+    flex: 1 1 auto;
 }
 
 .body_background {
@@ -12,8 +21,6 @@
 }
 
 .root {
-    max-width: 1140px;
-    padding: 20px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -21,20 +28,111 @@
     font-size: calc(10px + 2vmin);
     color: white;
     width: 100%;
+    max-width: 1440px;
+    margin-right: auto;
+    margin-left: auto;
+    padding: 0px 16px;
+
+    @media (min-width: 720px) {
+        padding: 0px 48px;
+    }
+
+    @media (min-width: 1080px) {
+        padding: 0px 96px;
+    }
 }
 
+.logo-container {
+    padding: 50px 30px;
+    display: flex;
+    align-items: center;
+    margin: 0px auto;
+    user-select: none;
+
+    @media (min-width: 1080px) {
+        padding: 100px 30px;
+    }
+}
+
+.logo {
+    width: 300px;
+    margin: 0px auto;
+    display: flex;
+
+    @media (min-width: 1080px) {
+        width: 400px;
+    }
+}
+
+.logo__h1 {
+    color: #2E62C1;
+    -webkit-animation: text-shadow-drop-tr 600ms 300ms cubic-bezier(0, 0, .58, 1) forwards;
+    animation: text-shadow-drop-tr 600ms 300ms cubic-bezier(0, 0, .58, 1) forwards;
+    text-align: center;
+}
+
+@-webkit-keyframes text-shadow-drop-tr {
+    0% {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+        text-shadow: 0 0 5px #ffea07c5;
+    }
+}
+
+@keyframes text-shadow-drop-tr {
+    0% {
+        transform: translateY(10px);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+        text-shadow: 0 0 5px #ffea07c5;
+    }
+}
+
+@media (max-width: 500px) {
+    .logo-container {
+        padding: 15px;
+    }
+
+    .logo {
+        width: 270px;
+    }
+
+    .logo__h1 {
+        padding: 25px;
+        font-size: 25px;
+    }
+}
+
+@media (max-width: 900px) {
+
+    .logo-container {
+        flex-direction: column;
+    }
+}
 /*!****************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/containers/PokemonsList/style.css ***!
   \****************************************************************************************************/
 .pokemons-list {
     display: flex;
     flex-wrap: wrap;
-    grid-gap:20px;
+    grid-gap: 20px;
+    justify-content: space-between;
 }
 
 a {
     color: inherit;
     text-decoration: none;
+    align-items: center;
+    display: flex;
 }
 
 .pokemons-list__button {
@@ -48,164 +146,116 @@ a {
     cursor: pointer;
     box-shadow: 0 0 10px #fff;
 }
-
-/*!***********************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/Header/style.css ***!
-  \***********************************************************************************/
-.header {
-    padding: 30px;
-    justify-content: center;
-}
-
-.logo {
-    max-height: 200px;
-    width: 100%;
-}
-
-.header__h1 {
-    padding: 50px;
-    color: #2E62C1;
-	-webkit-animation: text-shadow-drop-tr 0.6s infinite both;
-	        animation: text-shadow-drop-tr 0.6s infinite both;
-}
-
- @-webkit-keyframes text-shadow-drop-tr {
-    0% {
-      text-shadow: 0 0 0 #ebe281;
-    }
-    100% {
-      text-shadow: 0 0 18px #ffea07c5;
-    }
-  }
-  @keyframes text-shadow-drop-tr {
-    0% {
-      text-shadow: 0 0 0 #ebe281;
-    }
-    100% {
-      text-shadow: 0 0 18px #ffea07c5;
-    }
-  }
-
-@media (max-width: 500px) {
-  .header {
-    padding: 15px;
-}
-
-.logo {
-}
-
-.header__h1 {
-    padding: 25px;
-    font-size: 25px;
-}
-}
-  
-
-/*!**********************************************************************************************!*\
-  !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/containers/Search/style.css ***!
-  \**********************************************************************************************/
-.d-flex {
-    padding-bottom: 70px;
-    padding-top: 30px;
-    max-width: 400px;
-    width: 100%;
-    min-width: 200px;
-}
-.search__input {
-    border-bottom-left-radius: 10px;
-    border-top-left-radius: 10px;
-    border: none;
-    padding: 10px;
-    width: 70%;
-}
-
-.search__button {
-    border: none;
-    border-bottom-right-radius: 10px;
-    border-top-right-radius: 10px;
-    border-top: none;
-    padding: 10px;
-    width: 30%;
-}
-
-.search__button:disabled {
-    color: #fff;
-}
-
-.search__button:hover {
-    cursor: pointer;
-    background-color: #282c34;
-    color: #fff;
-    box-shadow: 0 0 10px #fff;
-}
-
-.search__input:focus-visible {
-    box-shadow: 0 0 10px #fff;
-}
-
-
 /*!***********************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/Footer/style.css ***!
   \***********************************************************************************/
 .footer {
-    width: 100%;
-    display: flex;
-    padding: 30px;
+  width: 100%;
+  display: flex;
+  padding: 30px;
+  justify-content: space-between;
+  user-select: none;
 }
 
 .all-rights {
-    display: block;
-    padding-top: 32px;
-    color: #7a7a7a;
-    font-size: 16px;
-    font-weight: 400;
-    line-height: 14px;
-    letter-spacing: 0.4px;
-    margin-right: auto;
-  }
-  
-  .social {
-    display: flex;
-    padding-top: 24px;
-    padding-bottom: 24px;
-  }
-  
-  .social-links {
-    text-decoration: none;
-    display: block;
-  }
-  
-  .fa-brands {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #ffffff;
-    font-size: 16px;
-    font-weight: 400;
-    letter-spacing: 0.4px;
-    height: 32px;
-    width: 32px;
-    margin-right: 8px;
-    border-radius: 7px;
-    border: 1px solid white;
-    box-shadow: 0 0 10px rgb(0, 0, 0);
-  }
-  
-  .fa-brands:hover {
-    cursor: pointer;
-    border: 1px solid black;
-    box-shadow: 0 0 10px #fff;
-  }
-.footer-mrg-l {
-  margin-left: 0;
-  margin-right: auto;
+  display: block;
+  color: #7a7a7a;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: 0.4px;
 }
 
-.footer-mrg-r {
-  margin-left: auto;
-  margin-right: 0;
+.social {
+  display: flex;
+  gap: 10px;
 }
 
+.social-links {
+  text-decoration: none;
+}
+
+.fa-brands {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: 0.4px;
+  height: 32px;
+  width: 32px;
+  border: 1px solid white;
+  box-shadow: 0 0 10px rgb(0, 0, 0);
+  border-radius: 4px;
+}
+
+.fa-brands:hover {
+  cursor: pointer;
+  border: 1px solid black;
+  box-shadow: 0 0 10px #fff;
+}
+
+@media (max-width: 720px) {
+  .footer {
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 10px;
+  }
+}
+/*!***********************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/Header/style.css ***!
+  \***********************************************************************************/
+.header {
+    display: flex;
+    justify-content: space-between;
+    height: 44px;
+    width: 100%;
+    margin: 20px 0px;
+    gap: 10%;
+
+    @media (max-width: 719px) {
+        height: auto;
+        flex-direction: column-reverse;
+        gap: 20px;
+    }
+
+    @media (min-width: 1440px) {
+        gap: 20%;
+    }
+}
+
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 500px;
+
+    @media (max-width: 779px) {
+        width: 50%;
+    }
+
+    @media (max-width: 1080px) {
+        width: 70%;
+    }
+}
+
+.logo-pokemon {
+    height: 44px;
+    display: flex;
+
+    @media (max-width: 779px) {
+        display: none;
+    }
+}
+
+.pokemon-title {
+    height: 44px;
+
+    @media (max-width: 719px) {
+        display: none;
+    }
+}
 /*!**********************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/SearchResult/css/style.css ***!
   \**********************************************************************************/
@@ -213,8 +263,12 @@ a {
 /*!***************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/BackButton/style.css ***!
   \***************************************************************************************/
+.back__button-container {
+    margin-top: 50px;
+}
+
 .back__button {
-    width: 220px;
+    gap: 10px;
     font-size: 14px;
     border-radius: 7px;
     padding: 10px;
@@ -227,20 +281,28 @@ a {
     border: 1px solid black;
     box-shadow: 0 0 10px #fff;
 }
-
 /*!***************************************************************************************************!*\
   !*** css ./node_modules/css-loader/dist/cjs.js!./src/components/containers/PokemonInfo/style.css ***!
   \***************************************************************************************************/
 .pkm-pks-flex {
     display: flex;
     width: 100%;
-    justify-content: space-between;
+
+    @media (max-width: 719px) {
+        flex-direction: column
+    }
 }
 
 .left-part {
     display: flex;
     width: 50%;
     padding: 30px;
+    user-select: none;
+    justify-content: center;
+
+    @media (max-width: 719px) {
+        width: 100%;
+    }
 }
 
 .right-part {
@@ -250,6 +312,11 @@ a {
     padding: 30px;
     font-size: 14px;
     justify-content: center;
+    gap: 20px;
+
+    @media (max-width: 719px) {
+        width: 100%;
+    }
 }
 
 .pkm-pks__img {
@@ -259,22 +326,22 @@ a {
 }
 
 .pad-t-15 {
-    padding-top: 15px;
-    margin-left: 0;
-    margin-right: auto;
+    margin: 0;
+    text-align: center;
 }
 
 .pkm-pks-block {
     width: 100%;
     justify-content: center;
     font-size: 14px;
+    cursor: default;
 }
 
 .pkm-pks__list {
     display: flex;
     width: 100%;
-    flex-wrap: wrap;    
-    justify-content: space-around;
+    flex-wrap: wrap;
+    justify-content: center;
     grid-gap: 20px;
     padding: 0;
 }
@@ -300,9 +367,21 @@ a {
 .pkm-pks__abilities {
     border-right: 1px solid #fff;
     width: 50%;
+
+    @media (max-width: 719px) {
+        width: 100%;
+        border-right: none;
+    }
+}
+
+.pkm-pks__types {
+    width: 50%;
+
+    @media (max-width: 719px) {
+        width: 100%;
+    }
 }
 
 .upcs {
     text-transform: uppercase;
 }
-
