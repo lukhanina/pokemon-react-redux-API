@@ -2,11 +2,11 @@ import React, { useState, useEffect } from 'react';
 import './style.css';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
-  
+
 export function PokemonInfo() {
   const { name } = useParams();
 
-  const [ pokemon, setPokemon ] = useState({});
+  const [pokemon, setPokemon] = useState({});
 
   useEffect(() => {
     axios.get(`https://pokeapi.co/api/v2/pokemon/${name}`)
@@ -41,13 +41,13 @@ export function PokemonInfo() {
     )
   }
   )
-  
+
   return (
     <article className='pkm-pks'>
       <div className='pkm-pks-flex'>
         <div className='left-part'>
-          <img src={ pokemon?.sprites?.other?.dream_world?.front_default ||
-          pokemon?.sprites?.other['official-artwork']?.front_default } alt={pokemon.name} className='pkm-pks__img'/>
+          <img src={pokemon?.sprites?.other?.dream_world?.front_default ||
+            pokemon?.sprites?.other['official-artwork']?.front_default} alt={pokemon.name} className='pkm-pks__img' />
         </div>
         <div className='right-part'>
           <h1 className='pad-t-15 upcs'> {pokemon?.name}</h1>
@@ -65,7 +65,7 @@ export function PokemonInfo() {
               {abilitiesList}
             </ul>
           </div>
-          <div>
+          <div className='pkm-pks__types'>
             <h3 className='pkm-pks__h3'>Types</h3>
             <ul className='pkm-pks__list'>
               {typesList}

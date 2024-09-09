@@ -1,5 +1,9 @@
+.back__button-container {
+    margin-top: 50px;
+}
+
 .back__button {
-    width: 220px;
+    gap: 10px;
     font-size: 14px;
     border-radius: 7px;
     padding: 10px;
